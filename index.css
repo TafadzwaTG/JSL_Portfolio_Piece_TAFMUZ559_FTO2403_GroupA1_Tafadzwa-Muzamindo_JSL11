@@ -27,28 +27,28 @@ body {
   min-height: 100vh;
   flex-direction: row;
   margin: 0;
-  /* border: 5px solid red; */
+  /*border: 5px solid red; */
   background-color: var(--secondary-color);
   box-sizing: border-box;
   width: 100%;
 }
 
 #layout {
-  /* position: fixed; */
-  /* height: 100%; */
+  /*position: fixed;*/ 
+  /*height: 100%; */
   width: 100%;
   display: flex;
   flex: 1;
   flex-direction: column;
-  /* border: 2px solid green; */
+  /*border: 2px solid green;*/ 
   overflow-x: hidden
 }
 
 .side-bar {
   /*  */
   background-color: var(--primary-color);
-  /* border: 5px solid rgb(0, 0, 0); */
-  border-right: 0.1px solid #979797;
+  /*border: 5px solid rgb(0, 0, 0);*/ 
+ border-right: 0.1px solid #979797;
   /* flex: 0.8; */
   display: none;
   flex-direction: column;
@@ -321,7 +321,7 @@ header {
 
 .button-group .editBtns {
   flex-grow: 1; /* Allows the button to grow */
-  margin: 0 10px; /* Add a margin between the buttons */
+  margin: 0 7px; /* Add a margin between the buttons */
   padding: 100px 0; /* Adjust padding as necessary */
 }
 

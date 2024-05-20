@@ -1,5 +1,7 @@
 // TASK: import helper functions from utils
+import { getTasks, createNewTask, patchTask, putTask, deleteTask } from "./utils/taskFunctions";
 // TASK: import initialData
+import {initialData} from "./initialData"
 
 
 /*************************************************************************************************************************************************
@@ -18,8 +20,28 @@ function initializeData() {
 
 // TASK: Get elements from the DOM
 const elements = {
+    // Collection of column div elements
+  columnDivs: document.querySelectorAll('.column-div'),
+    // Modal window for editing tasks
+  editTaskModal: document.querySelector('.edit-task-model-window'),
+   // Modal window for creating a new task
+  modalWindow: document.getElementById('new-task-modal-window'),
+   // Header element displaying the board name
+  headerBoardName: document.getElementById('header-board-name'),
+  // Button to show the sidebar
+  showSideBarBtn:document.getElementById('show-side-bar-btn'),
+  // Button to hide the sidebar
+  hideSideBarBtn: document.getElementById('hide-side-bar-btn'),
+    // Container for filtering options
+  filterDiv: document.getElementById('filterDiv'),
+   // Switch element for changing the theme
+  themeSwitch: document.getElementById('switch'),
+    // Button to add a new task
+  addNewTaskBtn: document.getElementById('add-new-task-btn')
+ 
 
-}
+
+};
 
 let activeBoard = ""
 
@@ -31,7 +53,7 @@ function fetchAndDisplayBoardsAndTasks() {
   displayBoards(boards);
   if (boards.length > 0) {
     const localStorageBoard = JSON.parse(localStorage.getItem("activeBoard"))
-    activeBoard = localStorageBoard ? localStorageBoard ;  boards[0]; 
+    activeBoard = localStorageBoard ? localStorageBoard :  boards[0]; 
     elements.headerBoardName.textContent = activeBoard
     styleActiveBoard(activeBoard)
     refreshTasksUI();
