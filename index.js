@@ -23,7 +23,7 @@ const elements = {
     // Collection of column div elements
   columnDivs: document.querySelectorAll('.column-div'),
     // Modal window for editing tasks
-  editTaskModal: document.querySelector('.edit-task-model-window'),
+  editTaskModal: document.querySelector('.edit-task-modal-window'),
    // Modal window for creating a new task
   modalWindow: document.getElementById('new-task-modal-window'),
    // Header element displaying the board name
@@ -125,7 +125,7 @@ function refreshTasksUI() {
 // Styles the active board by adding an active class
 // TASK: Fix Bugs
 function styleActiveBoard(boardName) {
-  document.querySelectorAll('.board-btn').foreach(btn => { 
+  document.querySelectorAll('.board-btn').forEach(btn => { 
     
     if(btn.textContent === boardName) {
       btn.classList.add('active');
@@ -158,7 +158,7 @@ function addTaskToUI(task) {
   taskElement.setAttribute('data-task-id', task.id);
   
   tasksContainer.appendChild(taskElement); 
-
+}
 
 
 
@@ -188,7 +188,7 @@ function setupEventListeners() {
   elements.themeSwitch.addEventListener('change', toggleTheme);
 
   // Show Add New Task Modal event listener
-  elements.createNewTaskBtn.addEventListener('click', () => {
+  elements.addNewTaskBtn.addEventListener('click', () => {
     toggleModal(true);
     elements.filterDiv.style.display = 'block'; // Also show the filter overlay
   });
@@ -240,7 +240,7 @@ function addTask(event) {
 
 
 function toggleSidebar(show) {
-  const sidebar = document.getElementById('side-bar div');
+  const sidebar = document.getElementById('side-bar');
   sidebar.style.display = show ? 'block' : 'none';
   elements.showSideBarBtn.style.display = show ?'none':'block';
   localStorage.setItem('showSideBar', show); 
@@ -268,7 +268,7 @@ function toggleTheme(show) {
 function openEditTaskModal(task) {
   // Set task details in modal inputs
   const editTaskTitleInput = document.getElementById('edit-task-title-input'),
-  editTaskDescInput = document.getElementById('edit-task-decs-input'),
+  editTaskDescInput = document.getElementById('edit-task-desc-input'),
   editSelectStatus = document.getElementById('edit-select-status');
 
   editTaskTitleInput.value = task.title;
@@ -301,7 +301,7 @@ function openEditTaskModal(task) {
     toggleModal(false, elements.editTaskModal);
     refreshTasksUI();
   });
-}
+
 
 
   toggleModal(true, elements.editTaskModal); // Show the edit task modal
@@ -310,7 +310,7 @@ function openEditTaskModal(task) {
 function saveTaskChanges(taskId) {
   // Get new user inputs
   const editSelectStatus = document.getElementById('edit-select-status').value;
-  const editTaskTitleInput = document.getElementById('edit-task-titleInput').value;
+  const editTaskTitleInput = document.getElementById('edit-task-title-input').value;
   const editTaskDescInput = document.getElementById('edit-task-desc-input').value;
   
 
