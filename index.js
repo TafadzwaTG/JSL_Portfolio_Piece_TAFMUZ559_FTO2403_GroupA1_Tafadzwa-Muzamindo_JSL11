@@ -38,9 +38,8 @@ const elements = {
   themeSwitch: document.getElementById('switch'),
     // Button to add a new task
   addNewTaskBtn: document.getElementById('add-new-task-btn')
+  
  
-
-
 };
 
 let activeBoard = "";
