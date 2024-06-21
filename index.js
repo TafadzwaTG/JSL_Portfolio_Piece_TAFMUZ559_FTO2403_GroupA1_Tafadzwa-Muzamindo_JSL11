@@ -1,5 +1,5 @@
 // TASK: import helper functions from utils
-import { getTasks, createNewTask, patchTask, putTask, deleteTask } from './utils/taskFunctions.js';
+import { getTasks, createNewTask, putTask, deleteTask } from './utils/taskFunctions.js';
 // TASK: import initialData
 import {initialData} from './initialData.js'
 
@@ -258,7 +258,7 @@ function toggleTheme(show) {
     isLightTheme ? 'logo-dark.svg' : 'logo-light.svg',
     isLightTheme ? 'logo-light.svg' :'logo-dark.svg'
   );
-  elements.logo.src = elements.logo.src.replace(loadLogo, getLogo);
+  elements.logo.src = elements.logo.src.replace(loadedLogo, getLogo);
   localStorage.setItem('light-theme', isLightTheme ? 'enabled' : 'disabled'); 
  
 }
